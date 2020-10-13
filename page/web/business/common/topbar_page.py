@@ -15,12 +15,14 @@ class TopbarPage:
     accountManager_button = (By.ID, 'mectrl_main_trigger')
 
     # Stream action bar
-    home_link = (By.XPATH, '//li[contains(@class, "home-menu-ite")]')
+    home_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-home-button")]')
     discover_button = (By.ID, 'topbar-discover-navigation-button-desktop')
+    discover_dropdown_menu = (By.XPATH, '//div[contains(@data-bi-id, "topbar-discover-dropdown-menu")]/child::ul')
     discover_video_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-discover-video-link")]')
     discover_channel_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-discover-channel-link")]')
     discover_people_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-discover-people-link")]')
     discover_group_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-discover-group-link")]')
+    discover_dropdown_menu_tuple = (discover_video_link, discover_channel_link, discover_people_link, discover_group_link)
     myContent_button = (By.ID, 'topbar-mycontent-navigation-button-desktop')
     myContent_videos_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-myContent-videos-link")]')
     myContent_groups_link = (By.XPATH, '//a[contains(@data-bi-id, "topbar-myContent-groups-link")]')
@@ -40,3 +42,4 @@ class TopbarPage:
     upload_button = (By.XPATH, '//a[contains(@data-bi-id, "topbar-upload-button")]')
     invite_button = (By.XPATH, '//a[contains(@data-bi-id, "topbar-invite-button")]')
     feedback_button = (By.XPATH, '//a[contains(@aria-label, "sendfeedback")]')
+
