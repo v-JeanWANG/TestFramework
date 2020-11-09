@@ -3,10 +3,10 @@
 # @Author  :
 # @File    : stream_browse_business.py
 
-from baseview.web.business_web import BusinessWebPage
-from page.web.business.common.browse_page import BrowsePage as Page
-from common.browser_engine import Logger
 import time
+from ui.view.baseview.web.business_web import BusinessWebPage
+from ui.view.page.web.business.common.browse_page import BrowsePage as Page
+from ui.lib.browser_engine import Logger
 
 class Stream_browse_business(BusinessWebPage):
     def __init__(self, driver):
@@ -27,7 +27,7 @@ class Stream_browse_business(BusinessWebPage):
         return element is not None
 
     def click_show_more_button(self):
-        self.click(self._page.show_more)
+        self.click(self._page.show_more_button)
 
     def click_video_to_watch_by_index(self, videoIndex=0):
         items = self.driver.find_elements_by_xpath(self._page.items_list[1])

@@ -7,19 +7,18 @@ sys.path.append(os.getcwd())
 
 import time
 import unittest
-from businessview.web.common.login_business import simple_login
-from businessview.web.common.stream_topbar_business import *
-from businessview.web.common.stream_browse_business import *
-from businessview.web.common.stream_video_business import *
-from utilstest.base_runner import BaseWebTestCase
-from utilstest.base_yaml import Yaml
-from common.browser_engine import Logger
-
+from ui.view.businessview.web.common.login_business import simple_login
+from ui.view.businessview.web.common.stream_topbar_business import *
+from ui.view.businessview.web.common.stream_browse_business import *
+from ui.view.businessview.web.common.stream_video_business import *
+from ui.lib.base_runner import BaseWebTestCase
+from common.lib.base_yaml import Yaml
+from ui.lib.browser_engine import Logger, web_config_path
 
 class web_test(BaseWebTestCase):
     def __init__(self, *args, **kwargs):
         BaseWebTestCase.__init__(self, *args, **kwargs)
-        self.data = Yaml(Yaml.web_config_path).read()
+        self.data = Yaml(web_config_path).read()
         self.env = self.data['env']
         self.homeUrl = self.data['portal'][self.env].rstrip("/")
 

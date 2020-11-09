@@ -3,9 +3,9 @@
 # @Author  :
 # @File    : stream_video_business.py
 
-from baseview.web.business_web import BusinessWebPage
-from page.web.business.common.video_page import VideoPage as Page
-from common.browser_engine import Logger
+from ui.view.baseview.web.business_web import BusinessWebPage
+from ui.view.page.web.business.common.video_page import VideoPage as Page
+from ui.lib.browser_engine import Logger
 
 class Stream_video_business(BusinessWebPage):
     def __init__(self, driver):
